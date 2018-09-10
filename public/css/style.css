@@ -1,0 +1,28 @@
+#content {
+    width: 920px;
+    margin: auto;
+}
+#navigation {
+    margin-bottom: 30px;
+}
+table td {
+    word-break : break-all;
+}
+thead tr #category {
+    width: 150px;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.custom-select {
+    width: 150px;
+}
+#example-text-input {
+    width: 500px;
+}
+
+.alert .alert-danger {
+    margin-top: 200px;
+}
