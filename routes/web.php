@@ -14,7 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('hello','todoController@index');
-
-Route::post('hello','todoController@add');
