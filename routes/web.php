@@ -18,5 +18,3 @@ Route::get('/', function () {
 Route::get('hello','todoController@index');
 
 Route::post('hello','todoController@add');
-
-Route::post('hello/delete/{id}','todoController@delete');

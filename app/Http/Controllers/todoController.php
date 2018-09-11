@@ -19,7 +19,6 @@ class todoController extends Controller
     function add(Request $request){
         $validator = Validator::make($request->all(),[
             'genre' => 'numeric|between:1,3',
-            'content' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -35,17 +34,9 @@ class todoController extends Controller
             );
         }
 
-        $todolist = DB::table('todolist')->orderBy('id')->get();
+        $todolist = DB::table('todolist')->get();
 
         return view('hello',['todolist'=>$todolist,'status'=>true,]);
-    }
-
-    function delete($id){
-        DB::table('todolist')->where('id', '=', $id)->delete();
-
-        $todolist = DB::table('todolist')->orderBy('id')->get();
-
-        return redirect()->to('hello');
     }
 
 }

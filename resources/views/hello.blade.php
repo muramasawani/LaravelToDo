@@ -39,14 +39,14 @@
     </nav>
 
     <div id="content">
-            @if(count($errors)>0)
+            @if($errors->has('genre'))
             <div class="alert alert-danger" role="alert">
-                <strong>Error!</strong> 入力が不正です。
+                <strong>Error!</strong> {{ $errors->first('genre') }}
             </div>
             @endif
             @isset($status)
             <div class="alert alert-primary" role="alert">
-                <strong>Sucsess!</strong>
+                <strong>Well done!</strong> You successfully read this important alert message.
             </div>
             @endisset
         <div class="card">
@@ -81,8 +81,7 @@
                         <table class="table table-hover table-striped">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th class="delete">Delete</th>
-                                    <th class='id'>ID</th>
+                                    <th>#</th>
                                     <th id='category'>Category</th>
                                     <th>Content</th>
                                 </tr>
@@ -90,12 +89,7 @@
                             <tbody>
                                 @foreach($todolist as $todo)
                                     <tr>
-                                        <form  action="/hello/delete/{{ $todo->id }}" method="POST">
-                                            {{ csrf_field() }}
-                                            <td scope="row"><button type="submit" class="btn btn-primary">Delete</button></td>
-                                        </form>
-
-                                        <td scope="row">{{ $todo->id }}</td>
+                                        <th scope="row">{{ $loop->iteration }}</th>
                                             <td>
                                             @if($todo->genre==1)
                                                 今すぐ
@@ -110,7 +104,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    </form>
                 </blockquote>
             </div>
         </div>
