@@ -26,3 +26,9 @@ thead tr #category {
 .alert .alert-danger {
     margin-top: 200px;
 }
+.delete {
+    width: 150px;
+}
+.id {
+    width: 100px;
+}
